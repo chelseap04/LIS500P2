@@ -11,9 +11,10 @@ h1 {
 .card {
     background-color: white;
     border: none;
-    padding: 50px;
-    width: 300px;
-    height: 70px;
+    padding: 50 px;
+    width: 300 px;
+    height: 150 px;
+    box-sizing: border-box;
 }
 
     
