@@ -1,15 +1,72 @@
-<html>
-  <head>
-    <meta charset = "UTF-8">
-    <title>Home</title>
-    <link rel="stylesheet" href="styles.css">
-  </head>
-  <body>
-    <h1>Welcome to our site!</h1>
-    <div class = "container">
-      <a href="aboutme.html" class="card">Learn about us</a>
-      <a href="hero.html" class="card">Learn about a tech hero</a>
-      <a href="bias.html" class="card">Look at some resources on implicit bias</a>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Project 2 | Home</title>
+  <link rel="stylesheet" href="stylepage.css">
+</head>
+
+<body>
+  <!-- skip link for better accessibility -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- consistent header across all pages -->
+  <header class="site-header">
+    <div class="wrap header-row">
+      <div>
+        <!-- site title + short description for first impressions -->
+        <h1 class="site-title">LIS 500 Project 2</h1>
+        <p class="site-tagline">A website about us, implicit bias resources, and tech heroes for our project.</p>
+      </div>
+
+      <!-- main navigation on every page for usability -->
+      <nav class="nav">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="aboutme.html">About Us</a>
+        <a href="implicitbias.html">Implicit Bias Guide</a>
+        <a href="techhero.html">Tech Hero</a>
+      </nav>
     </div>
-  </body>
+  </header>
+
+  <main id="main" class="wrap">
+    <!-- splash content (hero section) -->
+    <section class="hero">
+      <h2 class="hero-title">Welcome to Our website</h2>
+      <p class="hero-text">
+        Use the cards below to explore our About page, a subject-guide-style resource page on implicit bias,
+        and profiles of tech leaders challenging norms.
+      </p>
+    </section>
+
+    <section class="grid">
+      <!-- cards with short descriptions for clarity -->
+      <a class="card link-card" href="aboutme.html">
+        <h3>About Us</h3>
+        <p>Who we are, what we study, and what we're curious about.</p>
+        <span class="cta">Open →</span>
+      </a>
+
+      <a class="card link-card" href="techhero.html">
+        <h3>Tech Hero</h3>
+        <p>Profiles of leaders advancing equity and inclusion in tech.</p>
+        <span class="cta">Open →</span>
+      </a>
+
+      <a class="card link-card" href="implicitbias.html">
+        <h3>Implicit Bias Guide</h3>
+        <p>A beginner-friendly subject guide with definitions + starter links.</p>
+        <span class="cta">Open →</span>
+      </a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <!-- footer -->
+    <div class="wrap">
+      <p>Project 2 • Team site</p>
+    </div>
+  </footer>
+</body>
 </html>
