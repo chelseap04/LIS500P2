@@ -9,11 +9,10 @@ h1 {
 }
 
 .card {
+    flex: 1;
     background-color: white;
-    border: none;
-    padding: 50 px;
-    width: 300 px;
-    height: 150 px;
+    border-radius: 15px;
+    padding: 40px;
     box-sizing: border-box;
 }
 
