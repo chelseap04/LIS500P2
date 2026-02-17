@@ -8,5 +8,13 @@ h1 {
     font-size: x-large;
 }
 
+.card {
+    background-color: white;
+    border: none;
+    padding: 50px;
+    width: 300px;
+    height: 70px;
+}
+
     
 
