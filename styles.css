@@ -11,8 +11,8 @@ h1 {
 .card {
     flex: 1;
     background-color: white;
-    border-radius: 15px;
-    padding: 40px;
+    border-radius: 15 px;
+    padding: 40 px;
     box-sizing: border-box;
 }
 
