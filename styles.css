@@ -10,22 +10,22 @@ h1 {
 
 .container {
     display: flex;
-    gap: 25 px;
-    padding: 40 px;
+    gap: 25px;
+    padding: 40px;
     justify-content: center;
     align-items: stretch;
 }
 
 .card {
     flex: 1;
-    min-width: 300 px;
-    min-height: 400 px;
+    min-width: 300px;
+    min-height: 400px;
     background-color: white;
-    padding: 50 px;
+    padding: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 12 px;
+    border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
