@@ -39,8 +39,9 @@ h1 {
     background-color: HoneyDew;
     padding: 50px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     font-family: Tahoma, Verdana, sans-serif;
