@@ -6,6 +6,7 @@ h1 {
     font-family: Tahoma, Verdana, sans-serif;
     font-weight: bold;
     font-size: x-large;
+    justify-content: center;
 }
 
 .container {
@@ -27,6 +28,8 @@ h1 {
     align-items: center;
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    font-family: Tahoma, Verdana, sans-serif;
+    font-size: medium;
 }
 
     
