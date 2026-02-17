@@ -32,5 +32,19 @@ h1 {
     font-size: medium;
 }
 
+.about {
+    flex: 1;
+    min-width: 500px;
+    min-height: 700px;
+    background-color: HoneyDew;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    font-family: Tahoma, Verdana, sans-serif;
+    font-size: medium;
+}
     
 
