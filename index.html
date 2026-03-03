@@ -4,24 +4,25 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Project 2 | Home</title>
+
+  <!-- Single shared stylesheet across the entire site -->
   <link rel="stylesheet" href="stylepage.css">
 </head>
 
 <body>
-  <!-- skip link for better accessibility -->
+  <!-- Skip link improves keyboard navigation + accessibility -->
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <!-- consistent header across all pages -->
+  <!-- Consistent header across all pages -->
   <header class="site-header">
     <div class="wrap header-row">
       <div>
-        <!-- site title + short description for first impressions -->
         <h1 class="site-title">LIS 500 Project 2</h1>
         <p class="site-tagline">A website about us, implicit bias resources, and tech heroes for our project.</p>
       </div>
 
-      <!-- main navigation on every page for usability -->
-      <nav class="nav">
+      <!-- Main nav appears on every page -->
+      <nav class="nav" aria-label="Main navigation">
         <a href="index.html" aria-current="page">Home</a>
         <a href="aboutme.html">About Us</a>
         <a href="implicitbias.html">Implicit Bias Guide</a>
@@ -31,39 +32,82 @@
   </header>
 
   <main id="main" class="wrap">
-    <!-- splash content (hero section) -->
+    <!-- Hero intro -->
     <section class="hero">
       <h2 class="hero-title">Welcome to our website!</h2>
       <p class="hero-text">
-        Use the cards below to explore our About page, a subject-guide-style resource page on implicit bias,
-        and profiles of tech leaders challenging norms.
+        This site connects course themes to real-world technology design. Explore our background, learn key terms,
+        and see tech leaders who challenge exclusion and expand access.
       </p>
     </section>
 
-    <section class="grid">
-      <!-- cards with short descriptions for clarity -->
-      <a class="card link-card" href="aboutme.html">
-        <h3>About Us</h3>
-        <p>Who we are, what we study, and what we're curious about.</p>
-        <span class="cta">Open →</span>
-      </a>
+    <!-- Homepage content that adds value beyond the navbar (addresses peer feedback) -->
+    <section class="grid two-col">
+      <article class="card">
+        <h2 class="section-title">Start here</h2>
+        <ol class="steps">
+          <li>
+            <strong>Get a baseline:</strong>
+            <a href="https://implicit.harvard.edu/implicit/takeatest.html" target="_blank" rel="noopener">
+              Take an IAT on Project Implicit
+            </a>
+            (optional; no need to share results).
+          </li>
+          <li><strong>Use quick tips:</strong> slow down decisions + seek diverse perspectives.</li>
+          <li><strong>See real impact:</strong> meet tech leaders changing access and representation.</li>
+        </ol>
+        <p class="muted">
+          Goal: understand how bias can show up quietly, and how inclusive design can reduce harm.
+        </p>
+      </article>
 
-      <a class="card link-card" href="techhero.html">
-        <h3>Tech Hero</h3>
-        <p>Profiles of leaders advancing equity and inclusion in tech.</p>
-        <span class="cta">Open →</span>
-      </a>
+      <article class="card">
+        <h2 class="section-title">Bias-aware design checklist</h2>
 
-      <a class="card link-card" href="implicitbias.html">
-        <h3>Implicit Bias Guide</h3>
-        <p>A beginner-friendly subject guide with definitions + starter links.</p>
-        <span class="cta">Open →</span>
-      </a>
+        <!-- Interactive, no-JS accordion using <details>/<summary> -->
+        <details class="accordion" open>
+          <summary>Before you publish</summary>
+          <ul>
+            <li>Use clear heading hierarchy (screen readers rely on it).</li>
+            <li>Check contrast + avoid meaning by color alone.</li>
+            <li>Write alt text that describes what matters.</li>
+          </ul>
+        </details>
+
+        <details class="accordion">
+          <summary>When you choose examples / “default users”</summary>
+          <ul>
+            <li>Avoid assuming one identity is “normal.”</li>
+            <li>Include examples across abilities + contexts.</li>
+            <li>Ask: who benefits, and who gets excluded?</li>
+          </ul>
+        </details>
+
+        <details class="accordion">
+          <summary>When you embed media</summary>
+          <ul>
+            <li>Add captions when possible (or a short text summary).</li>
+            <li>Make video responsive so it works on mobile.</li>
+            <li>Ensure keyboard users can reach everything.</li>
+          </ul>
+        </details>
+      </article>
+    </section>
+
+    <!-- featured concept block -->
+    <section class="card media-callout">
+      <h2 class="section-title">Featured concept: intersectionality</h2>
+      <p>
+        Intersectionality reminds us people don’t experience the world through one identity at a time.
+        Identities overlap, and systems can treat those overlaps differently.
+      </p>
+      <p class="muted">
+        We connect this idea to both our resources (Implicit Bias Guide) and our tech heroes (Tech Hero page).
+      </p>
     </section>
   </main>
 
   <footer class="site-footer">
-    <!-- footer -->
     <div class="wrap">
       <p>Project 2 • Team site</p>
     </div>

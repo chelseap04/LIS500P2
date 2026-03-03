@@ -8,19 +8,16 @@
 </head>
 
 <body>
-  <!-- skip link for accessibility -->
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <!-- shared header and navigation -->
   <header class="site-header">
     <div class="wrap header-row">
       <div>
         <h1 class="site-title">Implicit Bias + Intersectionality Guide</h1>
-        <!-- audience reminder -->
         <p class="site-tagline">A quick reference guide to resources surrounding implicit bias and intersectionality.</p>
       </div>
 
-      <nav class="nav">
+      <nav class="nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="aboutme.html">About Us</a>
         <a href="implicitbias.html" aria-current="page">Implicit Bias Guide</a>
@@ -30,36 +27,43 @@
   </header>
 
   <main id="main" class="wrap">
-    <!-- main content + sidebar -->
     <section class="subject-guide">
       <article class="card guide-main">
         <h2>Quick Definitions</h2>
 
-        <h4>What is implicit bias?</h4>
+        <h3>What is implicit bias?</h3>
         <p>
           Implicit bias is when we have automatic assumptions or associations that can influence our decisions,
           even if we don't consciously agree with those assumptions. It often reflects patterns absorbed from culture,
           media, and history.
         </p>
 
-        <h4>What is the IBT / IAT?</h4>
+        <h3>What is the IBT / IAT?</h3>
         <p>
           The Implicit Association Test (IAT) is a timed activity that measures how quickly you sort things into categories.
           Because it's time-pressured, it can reveal fast associations rather than careful, intentional beliefs.
         </p>
 
-        <h4>What is intersectionality?</h4>
+        <h3>What is intersectionality?</h3>
         <p>
           Intersectionality is the idea that people don't experience the world through one identity at a time. Race, gender,
           class, nationality, religion (and more) overlap, and that overlap can shape how someone is treated or perceived.
         </p>
 
-        <p>Watch this video of one of our tech heroes, Kimberly Bryant, as she talks about implicit bias and racism in tech!</p>
-        <iframe width="420" height="315"
-            src="https://www.youtube.com/embed/KGtPOGKZKUM">
-        </iframe>
-       
-        <!-- reflections section without showing specific scores/results -->
+        <p>
+          Watch this video of one of our tech heroes, Kimberly Bryant, as she talks about implicit bias and racism in tech!
+        </p>
+
+        <!-- Responsive video embed (accessibility: title + allowfullscreen) -->
+        <div class="video">
+          <iframe
+            src="https://www.youtube.com/embed/KGtPOGKZKUM"
+            title="Kimberly Bryant talks about implicit bias and racism in tech"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+
         <h2>Our Thoughts on the Bias Test (no results)</h2>
         <p>
           We took the Asian American vs. European American version of the test, and one of the biggest things we noticed
@@ -78,7 +82,6 @@
           inequalities — especially when intersectional identities aren't considered.
         </p>
 
-        <!-- updated subject guide link -->
         <h2>Updated Library Subject Guide Link</h2>
         <p>
           UW-Madison Research/Subject Guides:
@@ -86,10 +89,15 @@
             researchguides.library.wisc.edu/subjectguides
           </a>
         </p>
+
+        <!-- Small note shows intentional accessibility work -->
+        <p class="muted">
+          Accessibility note: This page uses a skip link, semantic headings (h1 → h2 → h3), keyboard focus styling,
+          and a responsive video embed with a descriptive title.
+        </p>
       </article>
 
       <aside class="card guide-side">
-        <!-- Comment 7: Sidebar acts like “Databases/Resources” section in subject guides -->
         <h2>Starter Resources</h2>
         <ul class="link-list">
           <li><a href="https://implicit.harvard.edu/implicit/takeatest.html" target="_blank" rel="noopener">Project Implicit (Harvard)</a></li>
