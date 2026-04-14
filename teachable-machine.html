@@ -1,82 +1,170 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-    <title>Teachable Machine</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Project 3 | Teachable Machine</title>
+  <link rel="stylesheet" href="stylepage.css">
 </head>
+
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-<h1>Try Our Model</h1>
+  <header class="site-header">
+    <div class="wrap header-row">
+      <div>
+        <h1 class="site-title">Teachable Machine Project</h1>
+        <p class="site-tagline">A simple image classifier trained on our original happy and sad face dataset.</p>
+      </div>
 
-<div>Teachable Machine Image Model</div>
-<button type="button" onclick="init()">Start</button>
-<div id="webcam-container"></div>
-<div id="label-container"></div>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="aboutme.html">About Us</a>
+        <a href="implicitbias.html">Implicit Bias Guide</a>
+        <a href="techhero.html">Tech Hero</a>
+        <a href="teachable-machine.html" aria-current="page">Teachable Machine</a>
+      </nav>
+    </div>
+  </header>
 
-<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+  <main id="main" class="wrap">
+    <section class="hero">
+      <h2 class="hero-title">Try Our Model</h2>
+      <p class="hero-text">
+        This model was trained using our own original image dataset. It predicts whether a facial expression is
+        closer to happy or sad based on the examples we provided in Teachable Machine.
+      </p>
+    </section>
 
-<script type="text/javascript">
-const URL = "https://teachablemachine.withgoogle.com/models/yNdnU6P9I/";
-<div>Teachable Machine Image Model</div>
-<button type="button" onclick="init()">Start</button>
-<div id="webcam-container"></div>
-<div id="label-container"></div>
-<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
-<script type="text/javascript">
-    // More API functions here:
-    // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
+    <section class="grid two-col">
+      <article class="card">
+        <h2 class="section-title">Project Overview</h2>
+        <p>
+          For this project, we used Google Teachable Machine to train an image classification model using original
+          photos contributed by both group members. We organized our dataset into two classes: <strong>Happy</strong>
+          and <strong>Sad</strong>.
+        </p>
+        <p>
+          Our goal was to explore how machine learning models recognize patterns in facial expressions, while also
+          thinking critically about bias, training data, and the limits of AI systems.
+        </p>
 
-    // the link to your model provided by Teachable Machine export panel
+        <h3>Dataset Summary</h3>
+        <ul>
+          <li>2 classes: Happy and Sad</li>
+          <li>100 original images contributed by each group member</li>
+          <li>Images combined by class, not by person</li>
+          <li>Variation in angle, lighting, background, and facial expression</li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h2 class="section-title">How to Use It</h2>
+        <ol class="steps">
+          <li>Click the <strong>Start Model</strong> button.</li>
+          <li>Allow camera access in your browser.</li>
+          <li>Try different facial expressions in front of the webcam.</li>
+          <li>Watch the prediction scores update in real time.</li>
+        </ol>
+
+        <p class="muted">
+          Note: this model is experimental and may be affected by lighting, background, face angle, or the kinds of
+          images included in the training dataset.
+        </p>
+      </article>
+    </section>
+
+    <section class="card callout">
+      <h2 class="section-title">Live Classifier</h2>
+      <p>Click below to test the model with your webcam.</p>
+
+      <button class="tm-button" type="button" onclick="init()">Start Model</button>
+
+      <div class="tm-layout">
+        <div class="tm-camera-box">
+          <h3>Webcam</h3>
+          <div id="webcam-container"></div>
+        </div>
+
+        <div class="tm-results-box">
+          <h3>Predictions</h3>
+          <div id="label-container" class="prediction-list"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 class="section-title">Why This Matters</h2>
+      <p>
+        This project connects directly to ideas from <em>Unmasking AI</em>. A model is only as good as the data it
+        learns from. If the dataset is narrow, inconsistent, or biased, the model can learn patterns that do not
+        generalize well. Even a simple facial-expression classifier can reflect the choices made during data
+        collection, labeling, and testing.
+      </p>
+      <p>
+        Building this model helped us better understand that AI is not neutral. Accuracy depends on who is represented,
+        how categories are defined, and what kinds of patterns the system is encouraged to notice.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Project 3 • Teachable Machine</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+
+  <script>
     const URL = "https://teachablemachine.withgoogle.com/models/yNdnU6P9I/";
 
     let model, webcam, labelContainer, maxPredictions;
+    let isModelStarted = false;
 
-    // Load the image model and setup the webcam
     async function init() {
-        const modelURL = URL + "model.json";
-        const metadataURL = URL + "metadata.json";
+      if (isModelStarted) return;
 
-        // load the model and metadata
-        // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
-        // or files from your local hard drive
-        // Note: the pose library adds "tmImage" object to your window (window.tmImage)
-        model = await tmImage.load(modelURL, metadataURL);
-        maxPredictions = model.getTotalClasses();
+      const modelURL = URL + "model.json";
+      const metadataURL = URL + "metadata.json";
 
-        // Convenience function to setup a webcam
-        const flip = true; // whether to flip the webcam
-        webcam = new tmImage.Webcam(200, 200, flip); // width, height, flip
-        await webcam.setup(); // request access to the webcam
-        await webcam.play();
-        window.requestAnimationFrame(loop);
+      model = await tmImage.load(modelURL, metadataURL);
+      maxPredictions = model.getTotalClasses();
 
-        // append elements to the DOM
-        document.getElementById("webcam-container").appendChild(webcam.canvas);
-        labelContainer = document.getElementById("label-container");
-        for (let i = 0; i < maxPredictions; i++) { // and class labels
-            labelContainer.appendChild(document.createElement("div"));
-        }
+      const flip = true;
+      webcam = new tmImage.Webcam(280, 280, flip);
+      await webcam.setup();
+      await webcam.play();
+      window.requestAnimationFrame(loop);
+
+      document.getElementById("webcam-container").appendChild(webcam.canvas);
+      labelContainer = document.getElementById("label-container");
+
+      for (let i = 0; i < maxPredictions; i++) {
+        const predictionRow = document.createElement("div");
+        predictionRow.className = "prediction-item";
+        labelContainer.appendChild(predictionRow);
+      }
+
+      isModelStarted = true;
     }
 
     async function loop() {
-        webcam.update(); // update the webcam frame
-        await predict();
-        window.requestAnimationFrame(loop);
+      webcam.update();
+      await predict();
+      window.requestAnimationFrame(loop);
     }
 
-    // run the webcam image through the image model
     async function predict() {
-        // predict can take in an image, video or canvas html element
-        const prediction = await model.predict(webcam.canvas);
-        for (let i = 0; i < maxPredictions; i++) {
-            const classPrediction =
-                prediction[i].className + ": " + prediction[i].probability.toFixed(2);
-            labelContainer.childNodes[i].innerHTML = classPrediction;
-        }
-    }
-</script>
-</script>
+      const prediction = await model.predict(webcam.canvas);
 
+      for (let i = 0; i < maxPredictions; i++) {
+        const probabilityPercent = (prediction[i].probability * 100).toFixed(1);
+        const classPrediction = `${prediction[i].className}: ${probabilityPercent}%`;
+        labelContainer.childNodes[i].innerHTML = classPrediction;
+      }
+    }
+  </script>
 </body>
 </html>

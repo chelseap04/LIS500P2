@@ -304,3 +304,74 @@ a:hover { text-decoration-thickness: 2px; }
   .two-col, .three-col { grid-template-columns: 1fr; }
   .subject-guide { grid-template-columns: 1fr; }
 }
+
+/* ---------- Teachable Machine page ---------- */
+.tm-button {
+  background: var(--ink);
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-family: inherit;
+  cursor: pointer;
+  margin: 8px 0 18px;
+}
+
+.tm-button:hover {
+  opacity: 0.92;
+}
+
+.tm-button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(15, 23, 42, 0.22);
+}
+
+.tm-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 10px;
+}
+
+.tm-camera-box,
+.tm-results-box {
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.tm-camera-box h3,
+.tm-results-box h3 {
+  margin-top: 0;
+}
+
+#webcam-container canvas {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: white;
+}
+
+.prediction-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.prediction-item {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+}
+
+@media (max-width: 900px) {
+  .tm-layout {
+    grid-template-columns: 1fr;
+  }
+}
