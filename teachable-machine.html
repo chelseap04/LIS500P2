@@ -94,17 +94,101 @@
     </section>
 
     <section class="card">
-      <h2 class="section-title">Why This Matters</h2>
+  <h2 class="section-title">Demo Video</h2>
+  <p>Below is a video demo showing our Teachable Machine model in action.</p>
+
+  <div class="video">
+    <video controls>
+      <source src="videos/demo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</section>
+
+    <section class="card">
+      <h2 class="section-title">Project Statement</h2>
+
+      <h3>Overview</h3>
       <p>
-        This project connects to ideas from Unmasking AI by Joy Buolamwini in a really clear way. We realized that a model is only as good as the data it's trained on. 
-        If the dataset is limited, messy, or biased, the model can pick up patterns that don't actually work well in real situations. 
-        Even something simple like a facial expression classifier reflects the choices we made when collecting and labeling our data.
+        For our project, we decided to classify images of people based on emotion, whether they are displaying
+        happiness or sadness based on their facial expressions. Although it seems simple, these emotions are broad
+        and people show these emotions in vastly different ways, and we thought it would be interesting to see how
+        the model performs with different facial expressions that could technically fit into either of these two
+        emotion categories.
       </p>
       <p>
-        Building this also showed us that AI isn't neutral. 
-        How accurate it is depends a lot on who is included in the dataset, 
-        how we define categories like “happy” or “sad,” and what kinds of patterns the model ends up focusing on.
+        Our project is also helping us display our AI and web development skills, so that we can efficiently train
+        a model and host it on our website. However, our AI skills aren’t only technical, as this project will also
+        help us explore how AI is easily susceptible to bias. Throughout the project, we relied on examples from
+        Dr. Joy Buolamwini’s book <em>Unmasking AI</em> to help guide our thinking.
       </p>
+
+      <h3>Data</h3>
+      <p>
+        In our project, we had about 50 pictures of each emotion from each of us to train the model, labeled in
+        our repository as AleeyaHappy/Sad and ChelseaHappy/Sad, with one folder each for Happy and Sad. Most of
+        the pictures are of us creating the project, but there are also a few different people represented in the
+        dataset, with different identities they hold.
+      </p>
+      <p>
+        The pictures themselves also have different characteristics, such as different lighting, different settings,
+        and different image quality. There are some filler pictures from each of us in order to make sure we had
+        enough pictures to meet the project requirements and train the model, but these do not make up the entire
+        dataset. Having different faces and faces in different scenarios was something that we wanted in the dataset
+        so the model could be better equipped to see how different people show happiness.
+      </p>
+      <p>
+        Our selection of people is limited because we needed permission from people to be in a public dataset that
+        would be visible to members of our class. Although we were able to control this in our own project, we know
+        that this often is not the case in the real world when people’s data is used to train AI systems.
+      </p>
+      <p>
+        As we saw in <em>Unmasking AI</em>, when the owners of the Atlantic Towers apartment building tried to install
+        facial recognition for entry into the building, data collection is often done without the choice of the people
+        whose data is being collected. At the same time, we also know that our model may have been more accurate for
+        more people if we had increased the number of people represented in the dataset. Only training our model on a
+        few people may mean that it will not work well on others, especially people whose identities are not already
+        reflected in the dataset.
+      </p>
+
+      <h3>Process</h3>
+      <p>
+        We used Google’s Teachable Machine as shown in the lecture materials and uploaded our samples into the system
+        to train the model. When we initially trained the model, we found that it was not very accurate and often gave
+        a higher confidence score for sad even when we tested it with clearly happy facial expressions.
+      </p>
+      <p>
+        We think one reason for this is that the sad dataset only included pictures with one person, while the happy
+        dataset included more pictures with multiple people. Because of that, the model may have started associating
+        the number of people in the image with the emotion itself, instead of focusing only on the facial expression.
+      </p>
+
+      <h3>Lessons Learned</h3>
+      <p>
+        Through using our model, we were able to see bias show up in a very direct way. Our dataset was small and
+        limited in scope, which made it much harder for the model to accurately classify a displayed emotion. This
+        connects to the first examples of facial recognition that Dr. Joy Buolamwini shares in <em>Unmasking AI</em>,
+        where she faced difficulty getting facial recognition software to even detect her face.
+      </p>
+      <p>
+        The model in the CREATURES code library discussed in the book likely had a limited training dataset that did
+        not represent many different people with different identities, so it did not accurately reflect the population
+        of users who would interact with that technology. Having a limited dataset can lead to bias and even cause whole
+        identities to be ignored by the model.
+      </p>
+      <p>
+        This project helped us understand that AI is not neutral. A model is only as good as the data it learns from.
+        If the dataset is narrow, inconsistent, or biased, the model can learn patterns that do not generalize well.
+        Even a simple facial-expression classifier reflects choices made during data collection, labeling, and testing.
+        With more representative data, the model could become more accurate and more inclusive.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2 class="section-title">Project Resources</h2>
+      <ul class="link-list">
+        <li><a href="https://github.com/chelseap04/LIS500P2" target="_blank" rel="noopener">GitHub Repository</a></li>
+      </ul>
     </section>
   </main>
 
