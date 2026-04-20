@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Project 3 | Teachable Machine</title>
-  <link rel="stylesheet" href="stylepage.css">
+  <link rel="stylesheet" href="stylepage.css"> <!-- we are using similar CSS to the previous project, since it is on the same site -->
 </head>
 
 <body>
@@ -17,7 +17,8 @@
         <p class="site-tagline">A simple image classifier trained on our original happy and sad face dataset.</p>
       </div>
 
-      <nav class="nav" aria-label="Main navigation">
+      <!-- site navigation, with other pages from project 2 site that we are adding to -->
+      <nav class="nav" aria-label="Main navigation"> <!-- site navigation -->
         <a href="index.html">Home</a>
         <a href="aboutme.html">About Us</a>
         <a href="implicitbias.html">Implicit Bias Guide</a>
@@ -27,6 +28,7 @@
     </div>
   </header>
 
+  <!-- description of page -->
   <main id="main" class="wrap">
     <section class="hero">
       <h2 class="hero-title">Try Our Model</h2>
@@ -36,6 +38,7 @@
       </p>
     </section>
 
+    <!-- basic website overview, the full project statement is at the bottom of the page -->
     <section class="grid two-col">
       <article class="card">
         <h2 class="section-title">Project Overview</h2>
@@ -49,6 +52,7 @@
           thinking critically about bias, training data, and the limits of AI systems.
         </p>
 
+        <!-- this is expanded upon in the project summary, this is a simple overview for the user -->
         <h3>Dataset Summary</h3>
         <ul>
           <li>2 classes: Happy and Sad</li>
@@ -58,6 +62,7 @@
         </ul>
       </article>
 
+      <!-- This contains directions for user on how to use the model -->
       <article class="card">
         <h2 class="section-title">How to Use It</h2>
         <ol class="steps">
@@ -74,18 +79,22 @@
       </article>
     </section>
 
+    <!-- space for the user to actually try the model, as well as displaying the live feed from the webcam and the active predictions -->
     <section class="card callout">
       <h2 class="section-title">Live Classifier</h2>
       <p>Click below to test the model with your webcam. Upon clicking the button, your browser may prompt you to allow camera access.</p>
 
+      <!-- webcam will start once user clicks this, and prompt browser for webcam permissions -->
       <button class="tm-button" type="button" onclick="init()">Start Model</button>
 
+      <!-- will show once user clicks "start model" and allows webcam permissions from browser -->
       <div class="tm-layout">
         <div class="tm-camera-box">
           <h3>Webcam</h3>
           <div id="webcam-container"></div>
         </div>
 
+        <!-- will show once user clicks "start model" -->
         <div class="tm-results-box">
           <h3>Predictions</h3>
           <div id="label-container" class="prediction-list"></div>
@@ -93,6 +102,7 @@
       </div>
     </section>
 
+    <!-- demo video of model in action -->
     <section class="card">
   <h2 class="section-title">Demo Video</h2>
   <p>Below is a video demo showing our Teachable Machine model in action.</p>
@@ -100,11 +110,12 @@
   <div class="local-video">
   <video controls>
     <source src="videos/demo.mp4" type="video/mp4">
-    Your browser does not support the video tag.
+    Your browser does not support the video tag. <!-- if browser doesn't allow video -->
   </video>
 </div>
 </section>
 
+    <!-- full project statement, divided into contents -->
     <section class="card">
       <h2 class="section-title">Project Statement</h2>
 
@@ -184,6 +195,7 @@
       </p>
     </section>
 
+    <!-- link to repository -->
     <section class="card">
       <h2 class="section-title">Project Resources</h2>
       <ul class="link-list">
@@ -198,6 +210,7 @@
     </div>
   </footer>
 
+  <!-- JS script for the Teachable Machine model that we are using on our website -->
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
 
