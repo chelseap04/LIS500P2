@@ -1,10 +1,5 @@
 /* =========================================================
    LIS 500 Project - Shared Stylesheet
-   Goals:
-   - CSS-driven layout (minimal/no JS)
-   - Accessible navigation (skip link, focus-visible)
-   - Clear typography hierarchy (h1 > h2 > h3)
-   - Responsive layout (mobile-friendly)
    ========================================================= */
 
 :root {
